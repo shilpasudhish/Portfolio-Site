@@ -1,0 +1,271 @@
+:root {
+    /* Color variables */
+    --background-color: #bbbbbb;
+    --primary-color: #112055;
+    --secondary-color: #e0b354;
+    --secondary-text-color: #2b2b2b;
+    --link-color: #0000ee;
+    --visited-color: #551a8b;
+    --active-link-color: #ff0000;
+    --button-bg-color: black;
+    --button-text-color: whitesmoke;
+    --button-hover-color: rgba(206, 5, 5, 0.3);
+    --table-border-color: black;
+    --profile-bg-color: green;
+    --grid-item-bg-color: lightgray;
+    --contact-form-bg-color: beige;
+    --input-bg-color: gray;
+    --input-text-color: white;
+  
+    /* Font variables */
+    --font-family: "Nerko One", cursive;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+    --font-size-base: 16px;
+    --font-size-h1: 30px;
+    --font-size-h2: 24px;
+    --font-size-h3: 18px;
+  
+    /* Other variables */
+    --line-height: 1.6;
+    --button-padding: 10px;
+    --button-border-radius: 3px;
+    --button-transition: opacity 0.2s;
+    --grid-gap: 20px;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height);
+    color: black;
+  }
+  
+  h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  h2 {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  a {
+    color: var(--link-color);
+  }
+  
+  a:hover, a:focus {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: var(--visited-color);
+  }
+  
+  a:active {
+    color: var(--active-link-color);
+  }
+  
+  button,
+  .button {
+    border: none;
+    font-family: inherit;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transition: var(--button-transition);
+    width: 300px;
+    margin: auto;
+  }
+  
+  button:hover, button:focus, .button:hover, .button:focus {
+    color: var(--button-hover-color);
+    cursor: pointer;
+    opacity: 0.6;
+  }
+  
+  .button__secondary {
+    background-color: var(--secondary-color);
+    color: var(--secondary-text-color);
+  }
+  
+  table, th, td {
+    border: 1px solid var(--table-border-color);
+    text-align: center;
+    color: black;
+  }
+  
+  .profile {
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 50%;
+    text-align: center;
+  }
+  
+  .profile__portrait {
+    float: left;
+    background-color: var(--profile-bg-color);
+    width: 200px;
+    margin-right: 40px;
+    border-radius: 50%;
+  }
+  
+  .page-footer, .main-about {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .page-header {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .page-header__item {
+    flex: 0 1 100px;
+    width: 100px;
+  }
+  
+  .main-navigation-page-header__item:last-child {
+    flex-grow: 1;
+    text-align: right;
+  }
+  
+  .navigation-list, .main-aboutlist {
+    list-style-type: none;
+  }
+  
+  .navigation-list li {
+    display: inline-block;
+    margin-left: 15px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: var(--grid-gap);
+  }
+  
+  .grid__item {
+    background-color: var(--grid-item-bg-color);
+  }
+  
+  .grid__item:last-child {
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+  }
+  
+  .contact-options {
+    margin: 0 auto;
+    border-radius: 50%;
+    text-align: center;
+  }
+  
+  .contact-form {
+    display: flex;
+    background-color: var(--contact-form-bg-color);
+    border-radius: 3px;
+    padding: 1.8em;
+  }
+  
+  .msg {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+  }
+  
+  .msg > textarea {
+    flex: 1;
+    min-width: 18em;
+  }
+  
+  .input-form {
+    flex: 1;
+    order: 1;
+    margin-right: 2em;
+  }
+  
+  .input-form input {
+    width: 100%;
+  }
+  
+  .input-form input,
+  .input-form button {
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .input-form button {
+    background: var(--input-bg-color);
+    color: var(--input-text-color);
+    border: 0;
+  }
+  
+  #imageabout {
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    margin: auto;
+    padding-top: 20px;
+  }
+  
+  @media all and (max-width: 500px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media all and (max-width: 750px) {
+    .grid {
+      grid-gap: 10px;
+    }
+  
+    .grid__item:last-child {
+      grid-column: auto / auto;
+      grid-row: auto / auto;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  }
+  
+  @keyframes color-change {
+    0% {
+      fill: pink;
+    }
+    50% {
+      fill: purple;
+    }
+    100% {
+      fill: yellow;
+    }
+  }
+  
+  .backgroundcolor {
+    animation: 4s color-change infinite alternate linear;
+  }
+  
