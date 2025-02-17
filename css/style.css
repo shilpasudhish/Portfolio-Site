@@ -45,6 +45,7 @@ p {
   color: darkgrey;
   font-weight: 400;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 a {
